@@ -50,7 +50,13 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return Math.min(value1, value2) + ((Math.max(value1, value2) - Math.min(value1, value2)) / 2);
+  const result = (value1 + value2) / 2;
+
+  if (result !== Infinity) {
+    return result;
+  }
+
+  return Number.MAX_VALUE - (Number.MAX_VALUE - value1 + Number.MAX_VALUE - value2) / 2;
 }
 
 /**
